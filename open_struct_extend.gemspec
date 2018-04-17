@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Make deeper ostruct}
   spec.description   = %q{Make more deeper ostruct such as method chain of javascript object}
-  spec.homepage      = "http://rubygems.org/gems/ostruct_deep"
+  spec.homepage      = "https://github.com/yhk1038/ostruct_deep"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
