@@ -20,8 +20,28 @@ Or install it yourself as:
     $ gem install ostruct_deep
 
 ## Usage
+```ruby
+require 'open_struct_deep'
+ 
+# Put your hash structure for the first parameter
+person = OpenStructDeep.new({name: "John Smith", age: 70, pension: 300})
+ 
+ or
+ 
+# Another way you can
+person = OpenStructDeep.new
+person.name    = "John Smith"
+person.age     = 70
+person.pension = 300
+ 
+puts person.name     # -> "John Smith"
+puts person.age      # -> 70
+puts person.address  # -> nil
+```
 
-In original ostruct do below:
+## What's new?
+### Originals Problem in (OpenStructure)
+In original ostruct (rubysl-ostruct) do below:
 
 ```ruby
 hash = { "country" => "Australia", :population => 20_000_000, :info => { from: 1392, to: 1910 } }
@@ -37,8 +57,10 @@ p data.info # -> {:from=>1392, :to=>1910}
 p data.info.from # -> NoMethodError: undefined method `from' for {:from=>1392, :to=>1910}:Hash
 ```
 
+### Solved in new one (OpenStructureDeep)
 In ostruct_deep do below:
 
+#### Sample Structure
 The new hash has many stage and includes array.
 ```ruby
 hash = 
@@ -71,6 +93,7 @@ hash =
 }
 ```
 
+#### Works
 OpenStructDeep works fine :
 ```ruby
 data = OpenStructDeep.new(hash)
