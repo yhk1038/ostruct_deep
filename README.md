@@ -1,5 +1,6 @@
 # OpenStructDeep
 [![Gem Version](https://badge.fury.io/rb/ostruct_deep.png)](https://badge.fury.io/rb/ostruct_deep)
+[![Build Status](https://travis-ci.org/yhk1038/ostruct_deep.svg?branch=master)](https://travis-ci.org/yhk1038/ostruct_deep)
 
 Make deeper ostruct, such as method chain of javascript object
 
