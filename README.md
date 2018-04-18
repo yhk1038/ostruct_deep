@@ -51,16 +51,16 @@ puts person.address  # -> nil
 #### <Hash obj>.to_ostruct_deep
 - return :  object of OpenStructDeep
 ```ruby
-hash = {name: "John Smith", age: 70, pension: 300}
-hash.to_ostruct_deep  # -> #<OpenStructDeep name="John Smith", age=70, pension=300>
+hash = {name: "John Smith", age: 70, pension: 300, friends: ["Pablov", "Harry", "Peter"]}
+hash.to_ostruct_deep  # -> <OpenStructDeep name="John Smith", age=70, pension=300, friends=["Pablov", "Harry", "Peter"]>
 ```
 
 #### <OpenStructDeep obj>.to_h
 - return :  object of hash
 ```ruby
-hash = {name: "John Smith", age: 70, pension: 300}
-osd = OpenStructDeep.new(hash)  # -> <OpenStructDeep name="John Smith", age=70, pension=300>
-osd.to_h  # -> {:name=>"John Smith", :age=>70, :pension=>300}
+hash = {name: "John Smith", age: 70, pension: 300, friends: ["Pablov", "Harry", "Peter"]}
+osd = OpenStructDeep.new(hash)  # -> <OpenStructDeep name="John Smith", age=70, pension=300, friends=["Pablov", "Harry", "Peter"]>
+osd.to_h  # -> {:name=>"John Smith", :age=>70, :pension=>300, :friends=>["Pablov", "Harry", "Peter"]}
 ```
 
 ## What's new?

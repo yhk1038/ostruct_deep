@@ -30,10 +30,14 @@ class OpenStructDeepTest < Minitest::Test
                  :what => "ever"
                }
              }
-           ]
+           ],
+           :holiday => ["New Year's Day", "Thanksgiving Day"]
   }
   
   def test_it_still_run
+    puts "\n\n\n"
+    puts OpenStructDeep.new DATA
+    puts "\n\n\n"
     assert OpenStructDeep.new DATA
   end
   
@@ -78,8 +82,6 @@ class OpenStructDeepTest < Minitest::Test
     assert_equal Hash, DATA.class
     
     # hash.to_ostruct_deep
-    hash = {name: "John Smith", age: 70, pension: 300}
-    # puts hash.to_ostruct_deep
     assert_equal OpenStructDeep.new(DATA), DATA.to_ostruct_deep
   end
   
@@ -87,10 +89,6 @@ class OpenStructDeepTest < Minitest::Test
     # check sample is_a? Hash
     assert_equal Hash, DATA.class
 
-    hash = {name: "John Smith", age: 70, pension: 300}
-    puts hash.to_ostruct_deep
-    hash = hash.to_ostruct_deep
-    puts hash.to_h
     # ostruct_deep.to_h
     osd = OpenStructDeep.new DATA
     assert_equal DATA.symbolize_keys, osd.to_h

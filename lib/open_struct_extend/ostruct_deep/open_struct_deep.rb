@@ -11,7 +11,7 @@ class OpenStructDeep < OpenStruct
             when Hash
               OpenStructDeep.new v
             when Array
-              v.map { |x| OpenStructDeep.new x }
+              v.map { |x| x.is_a?(Hash) ? OpenStructDeep.new(x) : x }
             else
               v
             end
