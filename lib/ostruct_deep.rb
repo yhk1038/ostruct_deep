@@ -1,2 +1,2 @@
-require 'open_struct_extend/version'
-require 'open_struct_extend/ostruct_deep'
+require 'ostruct_deep/version'
+require 'ostruct_deep/ostruct_deep'
