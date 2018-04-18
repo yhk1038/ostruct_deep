@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 ```ruby
-require 'open_struct_deep'
+require 'ostruct_deep'
  
 # Put your hash structure for the first parameter
 hash = {name: "John Smith", age: 70, pension: 300}
@@ -46,6 +46,21 @@ person.pension = 300
 puts person.name     # -> "John Smith"
 puts person.age      # -> 70
 puts person.address  # -> nil
+```
+
+#### <Hash obj>.to_ostruct_deep
+- return :  object of OpenStructDeep
+```ruby
+hash = {name: "John Smith", age: 70, pension: 300}
+hash.to_ostruct_deep  # -> #<OpenStructDeep name="John Smith", age=70, pension=300>
+```
+
+#### <OpenStructDeep obj>.to_h
+- return :  object of hash
+```ruby
+hash = {name: "John Smith", age: 70, pension: 300}
+osd = OpenStructDeep.new(hash)  # -> <OpenStructDeep name="John Smith", age=70, pension=300>
+osd.to_h  # -> {:name=>"John Smith", :age=>70, :pension=>300}
 ```
 
 ## What's new?

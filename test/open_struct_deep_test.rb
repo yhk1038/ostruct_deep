@@ -73,6 +73,29 @@ class OpenStructDeepTest < Minitest::Test
     assert_equal 'Lee Seong Gye', osd.info.started_by.name
   end
   
+  def test_hash_has_to_ostruct_deep
+    # check sample is_a? Hash
+    assert_equal Hash, DATA.class
+    
+    # hash.to_ostruct_deep
+    hash = {name: "John Smith", age: 70, pension: 300}
+    # puts hash.to_ostruct_deep
+    assert_equal OpenStructDeep.new(DATA), DATA.to_ostruct_deep
+  end
+  
+  def test_it_can_rollback_to_h
+    # check sample is_a? Hash
+    assert_equal Hash, DATA.class
+
+    hash = {name: "John Smith", age: 70, pension: 300}
+    puts hash.to_ostruct_deep
+    hash = hash.to_ostruct_deep
+    puts hash.to_h
+    # ostruct_deep.to_h
+    osd = OpenStructDeep.new DATA
+    assert_equal DATA.symbolize_keys, osd.to_h
+  end
+  
   private
 
   def convert_string_key_to_method osd
